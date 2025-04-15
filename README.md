@@ -15,6 +15,7 @@
 ## 项目部署
 
 首先，下载项目源码后，在根目录下找到 ```requirements.txt``` 文件，然后通过 pip 工具安装 requirements.txt 依赖，执行命令：
+使用的是 python3.9
 
 ```
 pip3 install -r requirements.txt
@@ -55,6 +56,7 @@ pytest
 # 需要提前配置allure环境，才可以直接使用命令行
 allure serve ./report
 ```
+或者直接运行 run.py文件
 
 最终，可以看到测试报告的效果图如下：
 
