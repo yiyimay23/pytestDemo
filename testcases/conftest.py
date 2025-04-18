@@ -75,7 +75,7 @@ def insert_delete_user():
 
 @pytest.fixture(scope="function")
 def delete_register_user():
-    """注册用户前，先删除数据，用例执行之后，再次删除以清理数据"""
+    """注册用户前，先删除测试数据，用例执行之后，再次删除以清理数据"""
     del_sql = base_data["init_sql"]["delete_register_user"]
     db.execute_db(del_sql)
     step_first()

@@ -42,12 +42,15 @@ class TestRegLogDelete():
         except_code = testcase_data["except_code"]
         except_msg = testcase_data["except_msg"]
         logger.info("*************** 开始执行用例 ***************")
+        # 注册
         result = register_user(username, password, telephone, sex, address)
         step_1(username, password, telephone, sex, address)
         assert result.success is True, result.error
+        # 登录
         result = login_user(admin_user, admin_pwd)
         step_2(username)
         assert result.success is True, result.error
+        # 删除
         result = delete_user(username, admin_user, result.token)
         step_3(username)
         assert result.success == except_result, result.error

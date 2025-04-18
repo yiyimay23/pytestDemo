@@ -1,7 +1,7 @@
 test_user_register_login_list:
   username: "测试test"
   password: "123456"
-  telephone: "13599999999"
+  telephone: "13599999911"
   sex: "1"
   address: "深圳市宝安区"
   except_result: True
@@ -11,7 +11,7 @@ test_user_register_login_list:
 test_user_repeat_register:
   username: "测试test"
   password: "123456"
-  telephone: "13599999999"
+  telephone: "13599999922"
   sex: "1"
   address: "深圳市宝安区"
   except_result: False
@@ -22,7 +22,7 @@ test_user_register_login_update_success:
   register:
     username: "测试test"
     password: "123456"
-    telephone: "13599999999"
+    telephone: "13599999933"
     sex: "1"
     address: "深圳市宝安区"
   login:
@@ -41,7 +41,7 @@ test_user_register_login_update_fail:
   register:
     username: "测试test"
     password: "123456"
-    telephone: "13599999999"
+    telephone: "13599999944"
     sex: "1"
     address: "深圳市宝安区"
   login:
@@ -61,7 +61,7 @@ test_user_register_login_delete_success:
   admin_pwd: "123456"
   username: "测试test"
   password: "123456"
-  telephone: "13599999999"
+  telephone: "13599999955"
   sex: "1"
   address: "深圳市宝安区"
   except_result: True
@@ -73,7 +73,7 @@ test_user_register_login_delete_fail:
   admin_pwd: "123456"
   username: "测试test"
   password: "123456"
-  telephone: "13599999999"
+  telephone: "13599999977"
   sex: "1"
   address: "深圳市宝安区"
   except_result: False

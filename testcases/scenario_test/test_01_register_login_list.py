@@ -41,12 +41,15 @@ class TestRegLogList():
         except_code = testcase_data["except_code"]
         except_msg = testcase_data["except_msg"]
         logger.info("*************** 开始执行用例 ***************")
+        # 注册
         result = register_user(username, password, telephone, sex, address)
         step_1(username, password, telephone, sex, address)
         assert result.success is True, result.error
+        # 登录
         result = login_user(username, password)
         step_2(username)
         assert result.success is True, result.error
+        # 查看
         result = get_one_user_info(username)
         step_3(username)
         assert result.success == except_result, result.error

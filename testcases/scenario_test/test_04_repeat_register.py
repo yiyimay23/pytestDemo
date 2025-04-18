@@ -36,9 +36,11 @@ class TestRepeatReg():
         except_code = testcase_data["except_code"]
         except_msg = testcase_data["except_msg"]
         logger.info("*************** 开始执行用例 ***************")
+        # 注册
         result = register_user(username, password, telephone, sex, address)
         step_1(username, password, telephone, sex, address)
         assert result.success is True, result.error
+        # 再次注册
         result = register_user(username, password, telephone, sex, address)
         step_2(username, password, telephone, sex, address)
         assert result.success == except_result, result.error

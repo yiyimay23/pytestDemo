@@ -25,6 +25,7 @@ class TestUserLogin():
                              api_data["test_login_user"])
     def test_login_user(self, username, password, except_result, except_code, except_msg):
         logger.info("*************** 开始执行用例 ***************")
+        # 登录
         result = login_user(username, password)
         step_1(username)
         assert result.success == except_result, result.error

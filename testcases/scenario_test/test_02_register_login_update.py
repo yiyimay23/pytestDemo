@@ -52,19 +52,23 @@ class TestRegLogUpdate():
         except_code = testcase_data["except_code"]
         except_msg = testcase_data["except_msg"]
         logger.info("*************** 开始执行用例 ***************")
-        result = register_user(username, password, telephone, sex, address)
+        # 注册用户
         step_1(username, password, telephone, sex, address)
+        result = register_user(username, password, telephone, sex, address)  # 注册
         assert result.success is True, result.error
-        result = login_user(admin_user, admin_pwd)
+        # 管理员登录
         step_2(admin_user)
+        result = login_user(admin_user, admin_pwd)
         assert result.success is True, result.error
         admin_token = result.token
+        # 获取某个用户信息
+        step_3(id)
         result = get_one_user_info(username)
         id = result.response.json().get("data")[0].get("id")
-        step_3(id)
         assert result.success is True, result.error
-        result = update_user(id, admin_user, new_password, new_telephone, admin_token, new_sex, new_address)
+        # 更新用户信息
         step_4(id)
+        result = update_user(id, admin_user, new_password, new_telephone, admin_token, new_sex, new_address)
         assert result.success == except_result, result.error
         logger.info("code ==>> 期望结果：{}， 实际结果：【 {} 】".format(except_code, result.response.json().get("code")))
         assert result.response.json().get("code") == except_code
@@ -94,18 +98,23 @@ class TestRegLogUpdate():
         except_code = testcase_data["except_code"]
         except_msg = testcase_data["except_msg"]
         logger.info("*************** 开始执行用例 ***************")
+        # 注册
         result = register_user(username, password, telephone, sex, address)
         step_1(username, password, telephone, sex, address)
         assert result.success is True, result.error
+        # 管理员登录
         result = login_user(admin_user, admin_pwd)
         step_2(admin_user)
         assert result.success is True, result.error
         admin_token = result.token
+        # 获取某个用户信息
         result = get_one_user_info(username)
         id = result.response.json().get("data")[0].get("id")
         step_3(id)
         assert result.success is True, result.error
+        # 更新信息
         result = update_user(id + 1, admin_user, new_password, new_telephone, admin_token, new_sex, new_address)
+
         step_4(id)
         assert result.success == except_result, result.error
         logger.info("code ==>> 期望结果：{}， 实际结果：【 {} 】".format(except_code, result.response.json().get("code")))

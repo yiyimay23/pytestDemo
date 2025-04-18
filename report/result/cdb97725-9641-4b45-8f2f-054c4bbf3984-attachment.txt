@@ -1,0 +1,82 @@
+INFO     log:conftest.py:29 ******************************
+INFO     log:conftest.py:30 前置步骤开始 ==>> 清理数据
+INFO     log:conftest.py:83 注册用户操作：清理用户--准备注册新用户
+INFO     log:conftest.py:84 执行前置SQL：DELETE FROM user WHERE username = '测试test'
+INFO     log:test_01_register_login_list.py:43 *************** 开始执行用例 ***************
+INFO     log:rest_client.py:51 接口请求地址 ==>> http://111.230.243.230:9999/register
+INFO     log:rest_client.py:52 接口请求方式 ==>> POST
+INFO     log:rest_client.py:54 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+INFO     log:rest_client.py:55 接口请求 params 参数 ==>> null
+INFO     log:rest_client.py:56 接口请求体 data 参数 ==>> null
+INFO     log:rest_client.py:57 接口请求体 json 参数 ==>> {
+    "username": "测试test",
+    "password": "123456",
+    "sex": "1",
+    "telephone": "13599999911",
+    "address": "深圳市宝安区"
+}
+INFO     log:rest_client.py:58 接口上传附件 files 参数 ==>> None
+INFO     log:rest_client.py:59 接口 cookies 参数 ==>> null
+INFO     log:user.py:71 注册用户 ==>> 返回结果 ==>> {
+  "code": 0,
+  "msg": "\u606d\u559c\uff0c\u6ce8\u518c\u6210\u529f\uff01"
+}
+
+INFO     log:test_01_register_login_list.py:9 步骤1 ==>> 注册用户 ==>> 测试test, 123456, 13599999911, 1, 深圳市宝安区
+INFO     log:rest_client.py:51 接口请求地址 ==>> http://111.230.243.230:9999/login
+INFO     log:rest_client.py:52 接口请求方式 ==>> POST
+INFO     log:rest_client.py:54 接口请求头 ==>> {
+    "Content-Type": "application/x-www-form-urlencoded"
+}
+INFO     log:rest_client.py:55 接口请求 params 参数 ==>> null
+INFO     log:rest_client.py:56 接口请求体 data 参数 ==>> {
+    "username": "测试test",
+    "password": "123456"
+}
+INFO     log:rest_client.py:57 接口请求体 json 参数 ==>> null
+INFO     log:rest_client.py:58 接口上传附件 files 参数 ==>> None
+INFO     log:rest_client.py:59 接口 cookies 参数 ==>> null
+INFO     log:user.py:99 登录用户 ==>> 返回结果 ==>> {
+  "code": 0,
+  "login_info": {
+    "id": 272,
+    "login_time": "2025/04/18 23:36:28",
+    "token": "e2c62a475b367e7b1b39f0ddc9e2c90a",
+    "username": "\u6d4b\u8bd5test"
+  },
+  "msg": "\u606d\u559c\uff0c\u767b\u5f55\u6210\u529f\uff01"
+}
+
+INFO     log:test_01_register_login_list.py:14 步骤2 ==>> 登录用户：测试test
+INFO     log:rest_client.py:51 接口请求地址 ==>> http://111.230.243.230:9999/users/测试test
+INFO     log:rest_client.py:52 接口请求方式 ==>> GET
+INFO     log:rest_client.py:54 接口请求头 ==>> null
+INFO     log:rest_client.py:55 接口请求 params 参数 ==>> null
+INFO     log:rest_client.py:56 接口请求体 data 参数 ==>> null
+INFO     log:rest_client.py:57 接口请求体 json 参数 ==>> null
+INFO     log:rest_client.py:58 接口上传附件 files 参数 ==>> None
+INFO     log:rest_client.py:59 接口 cookies 参数 ==>> null
+INFO     log:user.py:38 查看单个用户 ==>> 返回结果 ==>> {
+  "code": 0,
+  "data": [
+    {
+      "address": "\u6df1\u5733\u5e02\u5b9d\u5b89\u533a",
+      "id": 272,
+      "password": "9dafadd3143216e21da7bcd30e4c502e",
+      "role": 1,
+      "sex": 1,
+      "telephone": "13599999911",
+      "username": "\u6d4b\u8bd5test"
+    }
+  ],
+  "msg": "\u67e5\u8be2\u6210\u529f"
+}
+
+INFO     log:test_01_register_login_list.py:19 步骤3 ==>> 获取某个用户信息：测试test
+INFO     log:test_01_register_login_list.py:56 code ==>> 期望结果：0， 实际结果：【 0 】
+INFO     log:test_01_register_login_list.py:59 *************** 结束执行用例 ***************
+INFO     log:conftest.py:35 后置步骤开始 ==>> 清理数据
+INFO     log:conftest.py:88 注册用户操作：删除注册的用户
+INFO     log:conftest.py:89 执行后置SQL：DELETE FROM user WHERE username = '测试test'
