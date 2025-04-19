@@ -1,0 +1,30 @@
+[2025-04-19 10:46:39,493][conftest.py 29][INFO]: ******************************
+[2025-04-19 10:46:39,493][conftest.py 30][INFO]: 前置步骤开始 ==>> 清理数据
+[2025-04-19 10:46:39,494][conftest.py 65][INFO]: 删除用户操作：插入新用户--准备用于删除用户
+[2025-04-19 10:46:39,494][conftest.py 66][INFO]: 执行前置SQL：INSERT INTO user(username, password, role, sex, telephone, address) VALUES('测试test', '123456', '1', '1', '13488888888', '北京市海淀区')
+[2025-04-19 10:46:39,503][test_05_delete_user.py 34][INFO]: *************** 开始执行用例 ***************
+[2025-04-19 10:46:39,503][test_05_delete_user.py 15][INFO]: 前置登录步骤 ==>> 管理员 wintest 登录 ==>> 返回的 token 为：1331dc15e2594a87af72d06022032bb9
+[2025-04-19 10:46:39,503][rest_client.py 51][INFO]: 接口请求地址 ==>> http://111.230.243.230:9999/delete/user/测试test
+[2025-04-19 10:46:39,503][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2025-04-19 10:46:39,504][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2025-04-19 10:46:39,504][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2025-04-19 10:46:39,504][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2025-04-19 10:46:39,508][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> {
+    "admin_user": "wintest",
+    "token": "1331dc15e2594a87af72d06022032bb9"
+}
+[2025-04-19 10:46:39,508][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2025-04-19 10:46:39,509][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2025-04-19 10:46:39,604][user.py 163][INFO]: 删除用户 ==>> 返回结果 ==>> {
+  "code": 0,
+  "msg": "\u606d\u559c\uff0c\u5220\u9664\u7528\u6237\u4fe1\u606f\u6210\u529f\uff01"
+}
+
+[2025-04-19 10:46:39,605][test_05_delete_user.py 10][INFO]: 步骤1 ==>> 删除用户：测试test
+[2025-04-19 10:46:39,605][test_05_delete_user.py 44][INFO]: code ==>> 期望结果：0， 实际结果：【 0 】
+[2025-04-19 10:46:39,606][test_05_delete_user.py 47][INFO]: *************** 结束执行用例 ***************
+[2025-04-19 10:46:39,693][conftest.py 35][INFO]: 后置步骤开始 ==>> 清理数据
+[2025-04-19 10:46:39,693][conftest.py 72][INFO]: 删除用户操作：手工清理处理失败的数据
+[2025-04-19 10:46:39,694][conftest.py 73][INFO]: 执行后置SQL：DELETE FROM user WHERE username = '测试test'

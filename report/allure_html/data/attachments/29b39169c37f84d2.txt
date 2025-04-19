@@ -1,0 +1,47 @@
+[2025-04-19 10:46:38,271][rest_client.py 51][INFO]: 接口请求地址 ==>> http://111.230.243.230:9999/login
+[2025-04-19 10:46:38,271][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2025-04-19 10:46:38,271][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/x-www-form-urlencoded"
+}
+[2025-04-19 10:46:38,271][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2025-04-19 10:46:38,272][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> {
+    "username": "wintest",
+    "password": "123456"
+}
+[2025-04-19 10:46:38,272][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> null
+[2025-04-19 10:46:38,272][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2025-04-19 10:46:38,272][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2025-04-19 10:46:38,345][conftest.py 40][INFO]: 前置步骤 ==>> 管理员 wintest 登录，返回信息 为：123456
+[2025-04-19 10:46:38,428][conftest.py 29][INFO]: ******************************
+[2025-04-19 10:46:38,432][conftest.py 30][INFO]: 前置步骤开始 ==>> 清理数据
+[2025-04-19 10:46:38,432][conftest.py 97][INFO]: 修改用户操作：手工修改用户的手机号，以便用例重复执行
+[2025-04-19 10:46:38,433][conftest.py 98][INFO]: 执行SQL：UPDATE user SET telephone = '13500010004' WHERE id = 135
+[2025-04-19 10:46:38,437][test_04_update_user.py 37][INFO]: *************** 开始执行用例 ***************
+[2025-04-19 10:46:38,438][test_04_update_user.py 39][INFO]: *************** 输出登录响应数据 ***************
+[2025-04-19 10:46:38,438][test_04_update_user.py 40][INFO]: {'code': 0, 'login_info': {'id': 348, 'login_time': '2025/04/19 10:46:38', 'token': '1331dc15e2594a87af72d06022032bb9', 'username': 'wintest'}, 'msg': '恭喜，登录成功！'}
+[2025-04-19 10:46:38,438][test_04_update_user.py 15][INFO]: 前置登录步骤 ==>> 管理员 wintest 登录 ==>> 返回的 token 为：1331dc15e2594a87af72d06022032bb9
+[2025-04-19 10:46:38,439][rest_client.py 51][INFO]: 接口请求地址 ==>> http://111.230.243.230:9999/update/user/135
+[2025-04-19 10:46:38,439][rest_client.py 52][INFO]: 接口请求方式 ==>> PUT
+[2025-04-19 10:46:38,439][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+[2025-04-19 10:46:38,439][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2025-04-19 10:46:38,439][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2025-04-19 10:46:38,439][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> {
+    "admin_user": "wintest",
+    "password": "123456",
+    "token": "1331dc15e2594a87af72d06022032bb9",
+    "sex": "3",
+    "telephone": "1350001001",
+    "address": "深圳市宝安区"
+}
+[2025-04-19 10:46:38,439][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2025-04-19 10:46:38,439][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2025-04-19 10:46:38,487][user.py 135][INFO]: 修改用户 ==>> 返回结果 ==>> {
+  "code": 4007,
+  "msg": "\u8f93\u5165\u7684\u6027\u522b\u53ea\u80fd\u662f 0(\u7537) \u6216 1(\u5973)\uff01\uff01\uff01"
+}
+
+[2025-04-19 10:46:38,487][test_04_update_user.py 10][INFO]: 步骤1 ==>> 修改用户ID：135
+[2025-04-19 10:46:38,488][test_04_update_user.py 49][INFO]: code ==>> 期望结果：4007， 实际结果：【 4007 】
+[2025-04-19 10:46:38,488][test_04_update_user.py 52][INFO]: *************** 结束执行用例 ***************

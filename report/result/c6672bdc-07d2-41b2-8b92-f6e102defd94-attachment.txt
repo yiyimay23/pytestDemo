@@ -1,0 +1,30 @@
+INFO     log:conftest.py:29 ******************************
+INFO     log:conftest.py:30 前置步骤开始 ==>> 清理数据
+INFO     log:conftest.py:65 删除用户操作：插入新用户--准备用于删除用户
+INFO     log:conftest.py:66 执行前置SQL：INSERT INTO user(username, password, role, sex, telephone, address) VALUES('测试test', '123456', '1', '1', '13488888888', '北京市海淀区')
+INFO     log:test_05_delete_user.py:34 *************** 开始执行用例 ***************
+INFO     log:test_05_delete_user.py:15 前置登录步骤 ==>> 管理员 wintest 登录 ==>> 返回的 token 为：1331dc15e2594a87af72d06022032bb9
+INFO     log:rest_client.py:51 接口请求地址 ==>> http://111.230.243.230:9999/delete/user/wintest
+INFO     log:rest_client.py:52 接口请求方式 ==>> POST
+INFO     log:rest_client.py:54 接口请求头 ==>> {
+    "Content-Type": "application/json"
+}
+INFO     log:rest_client.py:55 接口请求 params 参数 ==>> null
+INFO     log:rest_client.py:56 接口请求体 data 参数 ==>> null
+INFO     log:rest_client.py:57 接口请求体 json 参数 ==>> {
+    "admin_user": "wintest",
+    "token": "1331dc15e2594a87af72d06022032bb9"
+}
+INFO     log:rest_client.py:58 接口上传附件 files 参数 ==>> None
+INFO     log:rest_client.py:59 接口 cookies 参数 ==>> null
+INFO     log:user.py:163 删除用户 ==>> 返回结果 ==>> {
+  "code": 3006,
+  "msg": "\u7528\u6237\u540d\uff1a\u3010 wintest \u3011\uff0c\u8be5\u7528\u6237\u4e0d\u5141\u8bb8\u5220\u9664\uff01\uff01\uff01"
+}
+
+INFO     log:test_05_delete_user.py:10 步骤1 ==>> 删除用户：wintest
+INFO     log:test_05_delete_user.py:44 code ==>> 期望结果：3006， 实际结果：【 3006 】
+INFO     log:test_05_delete_user.py:47 *************** 结束执行用例 ***************
+INFO     log:conftest.py:35 后置步骤开始 ==>> 清理数据
+INFO     log:conftest.py:72 删除用户操作：手工清理处理失败的数据
+INFO     log:conftest.py:73 执行后置SQL：DELETE FROM user WHERE username = '测试test'

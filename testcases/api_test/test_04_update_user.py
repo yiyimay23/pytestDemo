@@ -36,10 +36,10 @@ class TestUpdate():
                          except_result, except_code, except_msg):
         logger.info("*************** 开始执行用例 ***************")
         user_info = login_fixture
-        admin_user = user_info.get("username")
-        # admin_user = user_info.get("login_info").get("username")
-        token = user_info.get("token")
-        # token = user_info.get("login_info").get("token")
+        logger.info("*************** 输出登录响应数据 ***************")
+        logger.info(user_info)
+        admin_user = user_info.get("login_info").get("username")
+        token = user_info.get("login_info").get("token")
         step_login(admin_user, token)
         result = update_user(id, admin_user, new_password, new_telephone, token, new_sex, new_address)
         step_1(id)

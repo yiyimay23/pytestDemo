@@ -1,0 +1,22 @@
+[2025-04-19 10:46:38,195][test_03_login.py 27][INFO]: *************** 开始执行用例 ***************
+[2025-04-19 10:46:38,195][rest_client.py 51][INFO]: 接口请求地址 ==>> http://111.230.243.230:9999/login
+[2025-04-19 10:46:38,197][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2025-04-19 10:46:38,198][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/x-www-form-urlencoded"
+}
+[2025-04-19 10:46:38,199][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2025-04-19 10:46:38,199][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> {
+    "username": "wintest4",
+    "password": ""
+}
+[2025-04-19 10:46:38,200][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> null
+[2025-04-19 10:46:38,200][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2025-04-19 10:46:38,200][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2025-04-19 10:46:38,264][user.py 99][INFO]: 登录用户 ==>> 返回结果 ==>> {
+  "code": 1001,
+  "msg": "\u7528\u6237\u540d\u6216\u5bc6\u7801\u4e0d\u80fd\u4e3a\u7a7a\uff01\uff01\uff01"
+}
+
+[2025-04-19 10:46:38,264][test_03_login.py 10][INFO]: 步骤1 ==>> 登录用户：wintest4
+[2025-04-19 10:46:38,264][test_03_login.py 34][INFO]: code ==>> 期望结果：1001， 实际结果：【 1001 】
+[2025-04-19 10:46:38,264][test_03_login.py 37][INFO]: *************** 结束执行用例 ***************

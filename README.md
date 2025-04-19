@@ -4,6 +4,7 @@
 
 >相关接口项目：[使用 Python+Flask+MySQL+Redis 开发简单接口实例](https://github.com/wintests/flaskDemo)
 
+用wintest注册后，通过数据库，将角色该为 0，即设置该用户为管理员
 ## 项目说明
 
 本项目在实现过程中，把整个项目拆分成请求方法封装、HTTP接口封装、关键字封装、测试用例等模块。
